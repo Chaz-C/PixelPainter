@@ -1,5 +1,6 @@
 var pixelPainterModule = (function() {
 
+
   // GRID FORM INPUTS //
 
   var gridSizeForm = document.createElement('form');
@@ -75,6 +76,7 @@ var pixelPainterModule = (function() {
   for(var i =0; i < colorArray.length; i++){
     var rows = document.createElement('div');
     rows.id = i;
+    rows.className = 'color-palette';
     rows.style.backgroundColor= colorArray[i];
     rows.style.width= 20;
     rows.style.height = 20;
@@ -83,7 +85,16 @@ var pixelPainterModule = (function() {
       selectedColor = this.style.backgroundColor;
       console.log(selectedColor);
     });
+    rows.addEventListener('click', function() {
+      for ( var b = 0; b < colorList.length; b ++ ) {
+        colorList[b].style.outline = '';
+      }
+      this.style.outline = '2px black dotted';
+    });
   }
+
+  var colorList = document.querySelectorAll('.color-palette');
+  console.log(colorList);
 
   // CLEAR BUTTON //
 
@@ -114,10 +125,5 @@ var pixelPainterModule = (function() {
     console.log('eraser active');
     selectedColor = 'white';
   });
-
-  return {
-    clear: clear,
-    createGrid: createGrid
-  };
 
 })();
