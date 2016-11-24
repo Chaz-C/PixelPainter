@@ -61,6 +61,17 @@ var pixelPainterModule = (function() {
         columns.addEventListener('click', function (){
            this.style.backgroundColor = selectedColor;
          });
+        columns.addEventListener('mouseover', function(){
+          if(event.buttons ===1){
+            if(event.shiftKey === false){
+              this.style.backgroundColor = white;
+
+            } else {
+          this.style.backgroundColor= selectedColor;
+        }
+      }
+
+        });
       }
     }
   }
