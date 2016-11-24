@@ -69,13 +69,7 @@ var pixelPainterModule = (function() {
 
   var selectedColor;
 
-  var colorArray = ["red", "blue", "yellow", "green",
-  "black", "orange", "purple", "pink", "brown", "aqua"];
-
   var fullColorArray = [ ['#E92525', '#FF4C4C', '#FF6B6B', '#FF8F8F', '#FFBABA'], ['#BE1E72', '#D13E8C', '#DF5DA2', '#EC84BB', '#F6B4D7'], ['#70209C', '#843AAD', '#9F59C6', '#BC80DC', '#DAB2F0'], ['#4529A0', '#5D43B2', '#7A62C9', '#9C88DE', '#C5B7F1'], ['#264A9C', '#4061AD', '#5F7EC6', '#85A0DD', '#B6C7F0'], ['#168C8C', '#2E9C9C', '#4EBABA', '#77D5D5', '#ACEDED'], ['#1DBB1D', '#3DCD3D', '#5CDD5C', '#83EA83', '#B3F6B3'], ['#A1DB23', '#BBF047', '#C8F466', '#D6F98B', '#E7FCB8'], ['#E9E925', '#FFFF4C', '#FFFF6B', '#FFFF8F', '#FFFFBA'], ['#E9C625', '#FFDF4C', '#FFE56B', '#FFEB8F', '#FFF3BA'], ['#E9A825', '#FFC34C', '#FFCE6B', '#FFDA8F', '#FFE8BA'], ['#E97E25', '#FF9D4C', '#FFAE6B', '#FFC18F', '#FFD9BA'], ['#040303', '#313131', '#696969', '#979696', '#C6C5C5']];
-
-  console.log(fullColorArray);
-
 
   var paletteTable = document.createElement('table');
   paletteTable.id = "palette";
@@ -107,20 +101,6 @@ var pixelPainterModule = (function() {
       });
     }
   }
-
-  /*for(var i =0; i < colorArray.length; i++){
-    var rows = document.createElement('div');
-    rows.id = i;
-    rows.className = 'color-palette';
-    rows.style.backgroundColor= colorArray[i];
-    rows.style.width= 20;
-    rows.style.height = 20;
-    paletteTable.appendChild(rows);
-    rows.addEventListener('click', function() {
-      selectedColor = this.style.backgroundColor;
-      console.log(selectedColor);
-    });
-  }*/
 
   var colorList = document.querySelectorAll('.color-palette');
 
