@@ -35,16 +35,20 @@ var pixelPainterModule = (function() {
   deleteGrid.innerHTML = 'DELETE GRID';
   pixelPainter.appendChild(deleteGrid);
   deleteGrid.addEventListener('click', function() {
-    pixelPainter.removeChild(grid);
+    canvas.removeChild(grid);
     console.log('grid deleted');
   });
 
   // CREATE GRID FUNCTION //
 
+  var canvas = document.createElement('div');
+  canvas.id = 'canvas';
+  pixelPainter.appendChild(canvas);
+
   function createGrid(width, height) {
     var table = document.createElement('table');
     table.id = 'grid';
-    pixelPainter.appendChild(table);
+    canvas.appendChild(table);
 
     for ( var i = 0; i < height; i ++ ) {
       var rows = document.createElement('tr');
@@ -71,7 +75,7 @@ var pixelPainterModule = (function() {
 
   var paletteTable = document.createElement('table');
   paletteTable.id = "palette";
-  pixelPainter.appendChild(paletteTable);
+  canvas.appendChild(paletteTable);
 
   for(var i =0; i < colorArray.length; i++){
     var rows = document.createElement('div');

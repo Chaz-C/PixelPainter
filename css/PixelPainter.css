@@ -8,7 +8,9 @@ td, tr {
   width: 20px;
   border-collapse: collapse;
   border: 1px dotted gray;
+  background-color: white;
 }
+
 
 #clear-button {
   border: 1px black solid;
@@ -17,6 +19,23 @@ td, tr {
   width: 60px;
   text-align: center;
   display: inline-block;
+}
+
+#canvas {
+  width: 500px;
+  height: 400px;
+}
+
+#palette {
+  float: left;
+}
+
+body {
+  background-image: url("../img/milkway.jpg");
+  background-repeat: no-repeat;
+  background-size: 800px 700px;
+  color: white;
+  text-align: center;
 }
 
 #erase-button {
