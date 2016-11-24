@@ -13,12 +13,14 @@ td, tr {
 
 
 #clear-button {
-  border: 1px black solid;
+  border: 1px grey solid;
   padding: 5px;
   border-radius: 5px;
   width: 60px;
   text-align: center;
   display: inline-block;
+  background-color: white;
+  color: grey;
 }
 
 #canvas {
@@ -31,33 +33,39 @@ td, tr {
 }
 
 body {
-  background-image: url("../img/milkway.jpg");
+  background-image: url("../img/paintSplatter.png");
   background-repeat: no-repeat;
-  background-size: 800px 700px;
-  color: white;
+  background-size: 1200px 800px;
+  color: grey;
   text-align: center;
 }
 
 #erase-button {
-  border: 1px black solid;
+  border: 1px grey solid;
   padding: 5px;
   border-radius: 5px;
   width: 60px;
   text-align: center;
   display: inline-block;
+  background-color: white;
+  color: grey;
 }
 
 #grid-button {
-  border: 1px black solid;
+  border: 1px grey solid;
   padding: 5px;
   border-radius: 5px;
   width: 150px;
   text-align: center;
   display: inline-block;
+  background-color: white;
+  color: grey;
 }
 
 #delete-grid {
-  border: 1px black solid;
+  border: 1px grey solid;
+  color: grey;
+  background-color: white;
   padding: 5px;
   border-radius: 5px;
   width: 150px;
