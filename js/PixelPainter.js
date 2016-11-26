@@ -27,20 +27,25 @@ var pixelPainterModule = (function() {
         var columns = document.createElement('td');
         rows.appendChild(columns);
         columns.className = "cells";
-        columns.addEventListener('click', function (){
+        columns.addEventListener('click', function () {
            this.style.backgroundColor = selectedColor;
-         });
-        columns.addEventListener('mouseover', function(){
-          if(event.buttons ===1){
-            if(event.shiftKey === false){
-              this.style.backgroundColor = white;
-
-            } else {
-          this.style.backgroundColor= selectedColor;
-        }
-      }
-
         });
+
+        columns.addEventListener('mouseover', function() {
+          if ( event.buttons === 1 ) {
+            this.style.backgroundColor = selectedColor;
+          }
+        });
+
+        /*columns.addEventListener('mouseover', function() {
+          if ( event.buttons === 1 ) {
+            if ( event.shiftKey === false ) {
+              this.style.backgroundColor = white;
+            } else {
+              this.style.backgroundColor= selectedColor;
+            }
+          }
+        });*/
       }
     }
   }
