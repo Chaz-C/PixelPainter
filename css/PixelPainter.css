@@ -4,18 +4,8 @@
 }
 
 @font-face {
-  font-family: 'V5PRC';
-  src: url(V5PRC.TTF);
-}
-
-@font-face {
   font-family: 'hachicro';
   src: url(hachicro.TTF);
-}
-
-@font-face {
-  font-family: 'V5PRD';
-  src: url(V5PRD.TTF);
 }
 
 @font-face {
@@ -67,7 +57,6 @@ body {
   padding: 5px;
   border-radius: 5px;
   margin-top: 5px;
-  /*width: 60px;*/
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -81,7 +70,6 @@ body {
   border: 1px grey solid;
   padding: 5px;
   border-radius: 5px;
-  /*width: 60px;*/
   text-align: center;
   margin-top: 5px;
   margin-left: auto;
@@ -96,7 +84,6 @@ body {
   border: 1px grey solid;
   padding: 5px;
   border-radius: 5px;
-  /*width: 105px;*/
   text-align: center;
   margin-top: 5px;
   background-color: #83EA83;
@@ -111,7 +98,6 @@ body {
   background-color: #979696;
   padding: 5px;
   border-radius: 5px;
-  /*width: 150px;*/
   text-align: center;
   margin-top: 5px;
   font-family: 'd-puntillas-C-Lace';
