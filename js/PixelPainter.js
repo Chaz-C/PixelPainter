@@ -1,43 +1,12 @@
 var pixelPainterModule = (function() {
 
+  var banner = document.createElement('div');
+  banner.id = 'banner';
+  document.body.appendChild(banner);
 
-  // GRID FORM INPUTS //
-
-  var gridSizeForm = document.createElement('form');
-  gridSizeForm.id = 'gridForm';
-  pixelPainter.appendChild(gridSizeForm);
-
-  var inputBoxWidth = document.createElement('input');
-  inputBoxWidth.setAttribute('type', 'text');
-  inputBoxWidth.setAttribute('placeholder', 'Width');
-  gridSizeForm.appendChild(inputBoxWidth);
-
-  var inputBoxHeight = document.createElement('input');
-  inputBoxHeight.setAttribute('type', 'text');
-  inputBoxHeight.setAttribute('placeholder', 'Height');
-  gridSizeForm.appendChild(inputBoxHeight);
-
-  // GRID CREATE BUTTON //
-
-  var gridButton = document.createElement('div');
-  gridButton.id = 'grid-button';
-  gridButton.innerHTML = 'CREATE GRID';
-  pixelPainter.appendChild(gridButton);
-  gridButton.addEventListener('click', function() {
-    createGrid(document.getElementById("gridForm").elements[0].value, document.getElementById("gridForm").elements[1].value);
-    console.log('grid created!');
-  });
-
-  // DELETE GRID //
-
-  var deleteGrid = document.createElement('div');
-  deleteGrid.id = 'delete-grid';
-  deleteGrid.innerHTML = 'DELETE GRID';
-  pixelPainter.appendChild(deleteGrid);
-  deleteGrid.addEventListener('click', function() {
-    canvas.removeChild(grid);
-    console.log('grid deleted');
-  });
+  var title = document.getElementsByTagName('h1');
+  banner.appendChild(title[0]);
+  document.body.appendChild(pixelPainter);
 
   // CREATE GRID FUNCTION //
 
@@ -48,7 +17,7 @@ var pixelPainterModule = (function() {
   function createGrid(width, height) {
     var table = document.createElement('table');
     table.id = 'grid';
-    canvas.appendChild(table);
+    pixelPainter.appendChild(table);
 
     for ( var i = 0; i < height; i ++ ) {
       var rows = document.createElement('tr');
@@ -129,7 +98,7 @@ var pixelPainterModule = (function() {
   var clearButton = document.createElement('div');
   clearButton.id = 'clear-button';
   clearButton.innerHTML = 'CLEAR';
-  pixelPainter.appendChild(clearButton);
+  canvas.appendChild(clearButton);
   clearButton.addEventListener('click', function() {
     clear();
   });
@@ -139,10 +108,49 @@ var pixelPainterModule = (function() {
   var eraseButton = document.createElement('div');
   eraseButton.id = 'erase-button';
   eraseButton.innerHTML = 'ERASE';
-  pixelPainter.appendChild(eraseButton);
+  canvas.appendChild(eraseButton);
   eraseButton.addEventListener('click', function() {
     console.log('eraser active');
     selectedColor = 'white';
   });
+
+  // GRID FORM INPUTS //
+
+  var gridSizeForm = document.createElement('form');
+  gridSizeForm.id = 'gridForm';
+  canvas.appendChild(gridSizeForm);
+
+  var inputBoxWidth = document.createElement('input');
+  inputBoxWidth.setAttribute('type', 'text');
+  inputBoxWidth.setAttribute('placeholder', 'W: 1 - 55');
+  gridSizeForm.appendChild(inputBoxWidth);
+
+  var inputBoxHeight = document.createElement('input');
+  inputBoxHeight.setAttribute('type', 'text');
+  inputBoxHeight.setAttribute('placeholder', 'H: 1 - ∞');
+  gridSizeForm.appendChild(inputBoxHeight);
+
+  // GRID CREATE BUTTON //
+
+  var gridButton = document.createElement('div');
+  gridButton.id = 'grid-button';
+  gridButton.innerHTML = 'Create Grid';
+  canvas.appendChild(gridButton);
+  gridButton.addEventListener('click', function() {
+    createGrid(document.getElementById("gridForm").elements[0].value, document.getElementById("gridForm").elements[1].value);
+    console.log('grid created!');
+  });
+
+  // DELETE GRID //
+
+  var deleteGrid = document.createElement('div');
+  deleteGrid.id = 'delete-grid';
+  deleteGrid.innerHTML = 'DELETE GRID';
+  canvas.appendChild(deleteGrid);
+  deleteGrid.addEventListener('click', function() {
+    pixelPainter.removeChild(grid);
+    console.log('grid deleted');
+  });
+
 
 })();

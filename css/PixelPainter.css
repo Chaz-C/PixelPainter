@@ -1,82 +1,152 @@
-#grid {
-  border: 1px solid black;
-  border-collapse: collapse;
+@font-face {
+  font-family: d-puntillas-C-Lace;
+  src: url(d-puntillas-C-Lace.ttf);
 }
 
-td, tr {
+@font-face {
+  font-family: 'V5PRC';
+  src: url(V5PRC.TTF);
+}
+
+@font-face {
+  font-family: 'hachicro';
+  src: url(hachicro.TTF);
+}
+
+@font-face {
+  font-family: 'V5PRD';
+  src: url(V5PRD.TTF);
+}
+
+@font-face {
+  font-family: 'BMblock';
+  src: url(BMblock.TTF);
+}
+
+#grid {
+  border-collapse: collapse;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 135px;
+}
+
+td {
   height: 20px;
   width: 20px;
+  padding: 0px;
   border-collapse: collapse;
   border: 1px dotted gray;
   background-color: white;
+  transition: background 0.3s;
 }
 
+#canvas {
+  float: left;
+  margin-left: 5px;
+  margin-right: 10px;
+  position: fixed;
+}
+
+#palette {
+  margin-left: auto;
+  margin-right: auto;
+  cursor: cell;
+}
+
+body {
+  background-image: url("../img/pastel.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0px;
+  cursor: default;
+}
 
 #clear-button {
   border: 1px grey solid;
   padding: 5px;
   border-radius: 5px;
-  width: 60px;
+  margin-top: 5px;
+  /*width: 60px;*/
   text-align: center;
-  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
   background-color: white;
   color: grey;
-}
-
-#canvas {
-  width: 500px;
-  height: 400px;
-}
-
-#palette {
-  float: left;
-}
-
-body {
-  background-image: url("../img/paintSplatter.png");
-  background-repeat: no-repeat;
-  background-size: 1200px 800px;
-  color: grey;
-  text-align: center;
+  font-family: 'd-puntillas-C-Lace';
+  font-weight: bold;
 }
 
 #erase-button {
   border: 1px grey solid;
   padding: 5px;
   border-radius: 5px;
-  width: 60px;
+  /*width: 60px;*/
   text-align: center;
-  display: inline-block;
-  background-color: white;
-  color: grey;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FF8F8F;
+  color: white;
+  font-family: 'd-puntillas-C-Lace';
+  font-weight: bold;
 }
 
 #grid-button {
   border: 1px grey solid;
   padding: 5px;
   border-radius: 5px;
-  width: 150px;
+  /*width: 105px;*/
   text-align: center;
-  display: inline-block;
-  background-color: white;
-  color: grey;
+  margin-top: 5px;
+  background-color: #83EA83;
+  color: white;
+  font-family: 'd-puntillas-C-Lace';
+  font-weight: bold;
 }
 
 #delete-grid {
   border: 1px grey solid;
-  color: grey;
-  background-color: white;
+  color: white;
+  background-color: #979696;
   padding: 5px;
   border-radius: 5px;
-  width: 150px;
+  /*width: 150px;*/
   text-align: center;
-  display: inline-block;
+  margin-top: 5px;
+  font-family: 'd-puntillas-C-Lace';
+  font-weight: bold;
 }
 
 input {
-  width: 50px;
+  width: 60px;
+  margin-top: 5px;
+}
+
+form {
+  margin-bottom: 0px;
+  text-align: center;
 }
 
 .color-palette {
   border: 1px solid white;
+  transition: outline 0.3s;
+}
+
+h1 {
+  font-family: 'BMblock';
+  color: grey;
+  font-size: 50px;
+  text-align: center;
+  margin: 0px;
+}
+
+#banner {
+  width: 100%;
+  height: 70px;
+  background-image: url('../img/banner.png');
+  display: block;
+  margin-bottom: 25px;
+  padding-top: 10px;
+  border-bottom: white 1px solid;
 }
