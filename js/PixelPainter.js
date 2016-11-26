@@ -15,6 +15,10 @@ var pixelPainterModule = (function() {
   pixelPainter.appendChild(canvas);
 
   function createGrid(width, height) {
+
+    if ( width > 55 || width < 1 || height < 1 ) {
+      alert('INVALID SIZE. Width: 1 - 55 & Height: 1 - ∞');
+    } else {
     var table = document.createElement('table');
     table.id = 'grid';
     pixelPainter.appendChild(table);
@@ -47,6 +51,7 @@ var pixelPainterModule = (function() {
           }
         });*/
       }
+    }
     }
   }
 
@@ -139,7 +144,7 @@ var pixelPainterModule = (function() {
 
   var gridButton = document.createElement('div');
   gridButton.id = 'grid-button';
-  gridButton.innerHTML = 'Create Grid';
+  gridButton.innerHTML = 'CREATE GRID';
   canvas.appendChild(gridButton);
   gridButton.addEventListener('click', function() {
     createGrid(document.getElementById("gridForm").elements[0].value, document.getElementById("gridForm").elements[1].value);
