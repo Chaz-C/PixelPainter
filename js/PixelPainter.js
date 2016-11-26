@@ -14,14 +14,20 @@ var pixelPainterModule = (function() {
   canvas.id = 'canvas';
   pixelPainter.appendChild(canvas);
 
+  var gridUp;
+
   function createGrid(width, height) {
 
     if ( width > 55 || width < 1 || height < 1 ) {
       alert('INVALID SIZE. Width: 1 - 55 & Height: 1 - ∞');
+    } else if ( gridUp === true ) {
+      alert('DELETE CURRENT GRID FIRST');
     } else {
     var table = document.createElement('table');
     table.id = 'grid';
     pixelPainter.appendChild(table);
+
+    gridUp = true;
 
     for ( var i = 0; i < height; i ++ ) {
       var rows = document.createElement('tr');
@@ -40,16 +46,6 @@ var pixelPainterModule = (function() {
             this.style.backgroundColor = selectedColor;
           }
         });
-
-        /*columns.addEventListener('mouseover', function() {
-          if ( event.buttons === 1 ) {
-            if ( event.shiftKey === false ) {
-              this.style.backgroundColor = white;
-            } else {
-              this.style.backgroundColor= selectedColor;
-            }
-          }
-        });*/
       }
     }
     }
@@ -122,6 +118,9 @@ var pixelPainterModule = (function() {
   eraseButton.addEventListener('click', function() {
     console.log('eraser active');
     selectedColor = 'white';
+    for ( var b = 0; b < colorList.length; b ++ ) {
+          colorList[b].style.outline = '';
+        }
   });
 
   // GRID FORM INPUTS //
@@ -160,7 +159,6 @@ var pixelPainterModule = (function() {
   deleteGrid.addEventListener('click', function() {
     pixelPainter.removeChild(grid);
     console.log('grid deleted');
+    gridUp = false;
   });
-
-
 })();
