@@ -36,9 +36,11 @@ var pixelPainterModule = (function() {
       for ( var j = 0; j < width; j ++ ) {
         var columns = document.createElement('td');
         rows.appendChild(columns);
+        columns.id = i + ' - ' + j;
         columns.className = "cells";
-        columns.addEventListener('click', function () {
+        columns.addEventListener('click', function (e) {
            this.style.backgroundColor = selectedColor;
+           console.log(e);
         });
 
         columns.addEventListener('mouseover', function() {
@@ -161,4 +163,43 @@ var pixelPainterModule = (function() {
     console.log('grid deleted');
     gridUp = false;
   });
+
+   // SAVE GRID //
+
+  var saveGrid = document.createElement('div');
+  saveGrid.id = 'save-grid';
+  saveGrid.innerHTML = 'Save Grid';
+  canvas.appendChild(saveGrid);
+  var savedGrid = [];
+
+
+
+  saveGrid.addEventListener('click', function (){
+     var tdCells = document.querySelectorAll('.cells');
+    for(var s = 0; s < tdCells.length; s++){
+     savedGrid.push(tdCells[s].style.backgroundColor);
+     console.log(tdCells[s]);
+     //savedGrid.push(tdCells[s]);
+
+    }
+     console.log(savedGrid);
+    //console.log('grid saved');
+    // localStorage.setItem('savedGrid', savedGrid);
+
+  });
+
+  //load grid//
+
+  var loadGrid = document.createElement('div');
+  loadGrid.id = 'load-grid';
+  loadGrid.innerHTML = 'Load Grid';
+  canvas.appendChild(loadGrid);
+  loadGrid.addEventListener('click', function(){
+    var nodeCells = document.querySelectorAll('.cells');
+    for(var r = 0; r < nodeCells.length; r++){
+      nodeCells[r].style.backgroundColor = savedGrid[r];
+    }
+
+  });
+
 })();

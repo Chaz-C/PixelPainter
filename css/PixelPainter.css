@@ -104,6 +104,30 @@ body {
   font-weight: bold;
 }
 
+#save-grid {
+  border: 1px grey solid;
+  color: white;
+  background-color: #77D5d5;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 5px;
+  font-family: 'd-puntillas-C-Lace';
+  font-weight: bold;
+}
+
+#load-grid {
+  border: 1px grey solid;
+  color: white;
+  background-color: #Bc80DC;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 5px;
+  font-family: 'd-puntillas-C-Lace';
+  font-weight: bold;
+}
+
 input {
   width: 60px;
   margin-top: 5px;
